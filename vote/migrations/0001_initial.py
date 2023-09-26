@@ -15,7 +15,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Question',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('question_id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('questions_text', models.TextField(max_length=200)),
                 ('pub_time', models.DateTimeField(verbose_name='date publish')),
             ],
@@ -23,7 +23,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Choice',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('choice_id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('choice_text', models.TextField(max_length=200)),
                 ('votes', models.IntegerField(default=0)),
                 ('question', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='vote.question')),
